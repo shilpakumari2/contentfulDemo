@@ -1,0 +1,27 @@
+<header role="banner" id="shared__global-header" class="shared__global-header shared__global-header--public__everence">
+	
+	<div class="shared__row shared__bg-color--white" role="region">
+		<div class="shared__global-header__wrapper">
+<a href="/" class="shared__brand shared__brand--default shared__brand--link" title="Everence home page">
+	<img src="/images/everence-logo-color.svg" alt="Everence Logo">
+</a>
+
+
+			<nav class="shared__navigation shared__navigation--public__everence" aria-label="Everence main navigation" id="shared__nav-menu">
+				
+				<ul class="shared__navigation--public__triggers" id="nav-bottom">
+                  {% for item in header.headermenuitem %}
+
+                            <li class="shared__navigation__item shared__navigation__item--public-primary-dropdown shared__navigation--public__menu">
+								<button class="shared__navigation__link--public shared__navigation__placeholder" tabindex="0" aria-expanded="false">
+									<span class="shared__navigation__placeholder-inner" title="{{ item.fields.linkitemname }}">  {{ item.fields.linkitemname }}</span>
+								</button>
+							
+                            </li>
+                              {% endfor %}
+
+                            </ul>
+</nav>
+</div>
+</div>
+</header>

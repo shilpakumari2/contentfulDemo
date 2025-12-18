@@ -1,0 +1,12 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+  <h1>Error</h1>
+  <p>{{ message }}</p>
+
+  {% if error and error.stack %}
+    <pre>{{ error.stack }}</pre>
+  {% endif %}
+{% endblock %}
