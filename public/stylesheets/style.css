@@ -12944,3 +12944,10 @@ header~.shared__show-hide.shared__card__body .shared__show-hide {
         max-width: 80ch
     }
 }
+.shared__carousel__slide {
+  display: none;
+}
+
+.shared__carousel__slide.is-active {
+  display: block;
+}

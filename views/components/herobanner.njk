@@ -1,5 +1,5 @@
-<div class="shared__carousel shared__carousel--hero-cta  shared__carousel--autoPlay" data-gap="15" data-visible-items="1.02" data-edge-padding="120">
-		<div class="tns-outer" id="tns1-ow"><div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">6 to 8</span>  of 4</div><div id="tns1-mw" class="tns-ovh"><div class="tns-inner" id="tns1-iw"><ul role="region" class="shared__carousel__container  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" id="tns1" style="transform: translate3d(-50%, 0px, 0px);"><li class="shared__carousel__slide tns-item" aria-hidden="true" tabindex="-1">
+<div class="shared__carousel shared__carousel--hero-cta  shared__carousel--autoPlay">
+		
 		<!-- This class for background position should be authorable -->
 		{% if page.herobanner and page.herobanner.length %}
 <ul class="shared__carousel">
@@ -7,7 +7,7 @@
 
     {# safety check: only render correct component type #}
 
-      <li class="shared__carousel__slide tns-item">
+      <li class="shared__carousel__slide">
 
         {% if banner.fields.image and banner.fields.image.length %}
           <div class="shared__bg-position--bottom-right"
@@ -48,41 +48,41 @@
 </ul>
 {% endif %}
 
-</ul></div></div></div>
 		<nav class="shared__carousel__controls shared__flex" aria-label="Carousel navigation" tabindex="0">
 			<button aria-label="previous slide" class="shared__carousel__button shared__carousel__button-prev" aria-controls="tns1" tabindex="-1" data-controls="prev">
 				<svg class="shared__icon shared__icon--shared__arrow--chevron-small shared__icon--size-large shared__icon--color-royal shared__icon--rotate-180" aria-labelledby="title--shared__arrow--chevron-small" role="img" aria-hidden="true">
 					<title id="title--shared__arrow--chevron-small" lang="en">Previous</title>
-					<use xlink:href="#icon-shared__arrow--chevron-small"></use>
+					<use xlink:href="/images/shared__arrow--chevron-small.svg"></use>
 				</svg>
 			</button>
-			<ol role="progressbar" aria-label="Carousel Pagination" aria-valuemin="1" aria-valuemax="4" class="shared__carousel__pagination shared__carousel__pagination-custom tns-nav">
-					<li data-nav="0" aria-label="Carousel Page 1" aria-controls="tns1" class="" tabindex="-1">
-						<button type="button">
-							<span>Slide 1</span>
-						</button>
-					</li>
-					<li data-nav="1" aria-label="Carousel Page 2" aria-controls="tns1" class="" tabindex="-1">
-						<button type="button">
-							<span>Slide 2</span>
-						</button>
-					</li>
-					<li data-nav="2" aria-label="Carousel Page 3 (Current Slide)" aria-controls="tns1" class="tns-nav-active">
-						<button type="button">
-							<span>Slide 3</span>
-						</button>
-					</li>
-					<li data-nav="3" aria-label="Carousel Page 4" aria-controls="tns1" class="" tabindex="-1">
-						<button type="button">
-							<span>Slide 4</span>
-						</button>
-					</li>
-			</ol>
+			
 			<button aria-label="next slide" class="shared__carousel__button shared__carousel__button-next" aria-controls="tns1" tabindex="-1" data-controls="next">
 				<svg class="shared__icon shared__icon--shared__arrow--chevron-small shared__icon--size-large shared__icon--color-royal" aria-labelledby="title--shared__arrow--chevron-small" role="img" aria-hidden="true">
 					<title id="title--shared__arrow--chevron-small" lang="en">Next</title>
-					<use xlink:href="#icon-shared__arrow--chevron-small"></use>
+					<use xlink:href="/images/shared__arrow--chevron-small.svg"></use>
 				</svg>
 			</button>
 		</nav>
 	</div>
+
+	<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.shared__carousel__slide');
+    const prevBtn = document.querySelector('.shared__carousel__button-prev');
+    const nextBtn = document.querySelector('.shared__carousel__button-next');
+
+    if (!slides.length) return;
+
+    let current = 0;
+    slides[current].classList.add('is-active');
+
+    function showSlide(index) {
+      slides[current].classList.remove('is-active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('is-active');
+    }
+
+    nextBtn.addEventListener('click', () => showSlide(current + 1));
+    prevBtn.addEventListener('click', () => showSlide(current - 1));
+  });
+</script>
