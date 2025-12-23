@@ -17,7 +17,9 @@ Together, we empower financial well-being for faith-inspired living. We believe 
 
 <div class="shared__card-list shared__card-list--4-cols">
 
+		{% if page.impact and page.impact.length %}
 
+  {% for item in page.impact %}
 
 <article class="shared__card shared__card--icon shared__bg-color--stone shared__align--center h-entry">
 	<header class="shared__card__header shared__card__header--default shared__card--has-padding--default">
@@ -27,62 +29,14 @@ Together, we empower financial well-being for faith-inspired living. We believe 
 		</figure>
 	</header>
 	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
-		<h3 class="shared__heading shared__heading--h3 shared__heading--navy p-name">$100 million</h3>
+		<h3 class="shared__heading shared__heading--h3 shared__heading--navy p-name">${{ item.fields.dollarvalue }}</h3>
 			<div class="shared__rich-text p-description">
-in charitable gifts distributed to 4,300 nonprofits on behalf of our members.			</div>
-			</div>
-</article>
-
-
-
-<article class="shared__card shared__card--icon shared__bg-color--stone shared__align--center h-entry">
-	<header class="shared__card__header shared__card__header--default shared__card--has-padding--default">
-		<figure class="shared__icon--card">
-			
-			<svg class="shared__icon shared__icon--shared__navigation--house shared__icon--size-extra-large  shared__icon--color-grass" aria-labelledby="title--shared__navigation--house" role="img"><title id="title--shared__navigation--house" lang="en">navigation--house</title><use xlink:href="#icon-shared__navigation--house"></use></svg>
-		</figure>
-	</header>
-	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
-		<h3 class="shared__heading shared__heading--h3 shared__heading--navy p-name">$990,000</h3>
-			<div class="shared__rich-text p-description">
-in Sharing Fund grants to help thousands of families meet basic needs.			</div>
-			</div>
-</article>
-
-
-
-<article class="shared__card shared__card--icon shared__bg-color--stone shared__align--center h-entry">
-	<header class="shared__card__header shared__card__header--default shared__card--has-padding--default">
-		<figure class="shared__icon--card">
-			
-			<svg class="shared__icon shared__icon--shared__business--credit-card shared__icon--size-extra-large  shared__icon--color-grass" aria-labelledby="title--shared__business--credit-card" role="img"><title id="title--shared__business--credit-card" lang="en">business--credit-card</title><use xlink:href="#icon-shared__business--credit-card"></use></svg>
-		</figure>
-	</header>
-	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
-		<h3 class="shared__heading shared__heading--h3 shared__heading--navy p-name">$537,000</h3>
-			<div class="shared__rich-text p-description">
-contributed to 508 nonprofits and churches through our MyNeighbor credit card program.			</div>
-			</div>
-</article>
-
-
-
-<article class="shared__card shared__card--icon shared__bg-color--stone shared__align--center h-entry">
-	<header class="shared__card__header shared__card__header--default shared__card--has-padding--default">
-		<figure class="shared__icon--card">
-			
-			<svg class="shared__icon shared__icon--shared__navigation--buildings shared__icon--size-extra-large  shared__icon--color-grass" aria-labelledby="title--shared__navigation--buildings" role="img"><title id="title--shared__navigation--buildings" lang="en">navigation--buildings</title><use xlink:href="#icon-shared__navigation--buildings"></use></svg>
-		</figure>
-	</header>
-	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
-		<h3 class="shared__heading shared__heading--h3 shared__heading--navy p-name">$3.6 million</h3>
-			<div class="shared__rich-text p-description">
-in home loans supporting families excluded from traditional credit, working toward long-term stability.			</div>
-			</div>
-</article>
-</div>
-	<footer class="shared__button--group-centered">
-<a class="shared__button shared__button--white-transparent shared__button--size-small u-url shared__button--link" title="More about community impact" href="https://www.everence.com/living-the-values/helping-communities">More about community impact</a>	</footer>
-
+                    {{ item.fields.description }}
 	</div>
+			</div>
+</article>
+  {% endfor %}
+  {% endif %}
+
+
 </section>

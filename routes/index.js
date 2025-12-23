@@ -4,7 +4,7 @@ var { getBasePage, getHeader, getHomePage  } = require('../lib/contentful')
 
 router.get('/', async function (req, res, next) {
   try {
-    const page = await getBasePage()
+    const page = await getBasePage();
   const header = await getHeader();
       const homePage = await getHomePage();
 

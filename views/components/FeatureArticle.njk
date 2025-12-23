@@ -1,9 +1,6 @@
 <section class="shared__card-container shared__row shared__row--white h-entry" id="featured-articles">
 <div class="shared__wrapper shared__rhythm--large shared__padding--vertical-medium">
 		
-
-
-
 	<h2 class="shared__heading shared__heading--h1 shared__heading--section heading--section">Featured articles</h2>
 
 		<div class="shared__wrapper shared__wrapper--small shared__rhythm--default">
@@ -11,75 +8,36 @@
 		
 
 <div class="shared__card-list shared__card-list--3-cols">
+		{% if page.articles and page.articles.length %}
+  {% for item in page.articles %}
 
 
 <article class="shared__card shared__card--has-border__color--robin shared__card--has-border__size--double shared__bg-color--stone h-entry">
 		<figure class="shared__card__figure">
-			<img src="https://www.everence.com//-/media/everence/articles/generic-images/placeholder-vine-robin-blue.png" srcset="/-/media/everence/articles/generic-images/placeholder-vine-robin-blue.png?mh=243&amp;mw=434&amp;hash=CBAC2475856C33E20582D718AD4903E5&amp; 434w, /-/media/everence/articles/generic-images/placeholder-vine-robin-blue.png?mh=351&amp;mw=624&amp;hash=D047EE8EA137395CA8120ADF3920EA30&amp; 624w, /-/media/everence/articles/generic-images/placeholder-vine-robin-blue.png?mh=378&amp;mw=672&amp;hash=C5F2660FFB718DA076AF9D00BAEBDB69&amp; 672w" sizes="(max-width: 1344px) 434px, 624px, 672px" alt="Default Story Image" class="shared__image shared__image--auto" loading="lazy">
+			<img src="{{ item.fields.image.fields.file.url }}" class="shared__image shared__image--auto">
 		</figure>
 	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
 		
-				<small class="shared__heading shared__heading--h6 shared__heading--bold shared__heading--uppercase p-category">Financial services</small>				<h3 class="shared__heading shared__heading--h4 shared__heading--bold p-name">
-					How best to keep your personal data protected
+				<small class="shared__heading shared__heading--h6 shared__heading--bold shared__heading--uppercase p-category">{{ item.fields.category }}</small>				
+				<h3 class="shared__heading shared__heading--h4 shared__heading--bold p-name">
+					{{ item.fields.title }}
 				</h3>
 				<h6 class="shared__heading shared__heading--h6 shared__heading--bold p-author">
 					By
 Sharon Hernandez				</h6>
-				<p class="p-description">Practical steps to safeguard your informaiton in a year of record data breaches</p>
-					<a class="shared__button shared__button--default-transparent u-url shared__button--link" href="https://www.everence.com/everence-articles/everence-federal-credit-union/education/how-best-to-keep-your-personal-data-protected" title="How best to keep your personal data protected">Read article</a>
+				<p class="p-description">{{ item.fields.description }}</p>
+					<a class="shared__button shared__button--default-transparent u-url shared__button--link" href="{{ item.fields.cta }}">Read article</a>
 	</div>
 		<footer class="shared__card__footer shared__card__footer--default shared__card--has-border__top">
 			<p class="shared__meta">
 				<strong>Published: </strong>
-				<time class="dt-published" datetime="11/20/2025 5:00:00 AM">November 20, 2025</time>
+				<time class="dt-published" datetime="11/20/2025 5:00:00 AM">{{ item.fields.date }}</time>
 			</p>
 		</footer>
 </article>
+ {% endfor %}
+  {% endif %}
 
-
-<article class="shared__card shared__card--has-border__color--robin shared__card--has-border__size--double shared__bg-color--stone h-entry">
-		<figure class="shared__card__figure">
-			<img src="https://www.everence.com//-/media/everence/articles/banking/youngadult-on-phone---775x436-adobestock_545782493.jpg" srcset="/-/media/everence/articles/banking/youngadult-on-phone---775x436-adobestock_545782493.jpg?mh=243&amp;mw=434&amp;hash=897C10E23CAC6F321DE44E4DB5639B54&amp; 434w, /-/media/everence/articles/banking/youngadult-on-phone---775x436-adobestock_545782493.jpg?mh=351&amp;mw=624&amp;hash=FE974D45FADD58C5E7EA60B7A991684C&amp; 624w, /-/media/everence/articles/banking/youngadult-on-phone---775x436-adobestock_545782493.jpg?mh=378&amp;mw=672&amp;hash=753DF791C03841A13A963120F7A6073A&amp; 672w" sizes="(max-width: 1344px) 434px, 624px, 672px" alt="Young woman sitting on couch looking at mobile phone" class="shared__image shared__image--auto" loading="lazy">
-		</figure>
-	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
-		
-				<small class="shared__heading shared__heading--h6 shared__heading--bold shared__heading--uppercase p-category">Banking</small>				<h3 class="shared__heading shared__heading--h4 shared__heading--bold p-name">
-					New promotion helps boost new Student Checking Accounts
-				</h3>
-				<p class="p-description">Members can get up to $50 in deposits matched</p>
-					<a class="shared__button shared__button--default-transparent u-url shared__button--link" href="https://www.everence.com/everence-articles/everence-federal-credit-union/product/new-promotion-helps-boost-new-student-checking-accounts" title="New promotion helps boost new Student Checking Accounts">Read article</a>
-	</div>
-		<footer class="shared__card__footer shared__card__footer--default shared__card--has-border__top">
-			<p class="shared__meta">
-				<strong>Published: </strong>
-				<time class="dt-published" datetime="10/13/2025 4:00:00 AM">October 13, 2025</time>
-			</p>
-		</footer>
-</article>
-
-
-<article class="shared__card shared__card--has-border__color--robin shared__card--has-border__size--double shared__bg-color--stone h-entry">
-		<figure class="shared__card__figure">
-			<img src="https://www.everence.com//-/media/everence/articles/financial-services/20251003_an-expression-of-faith_jim-miller-and-daughter-brielle_775x436.png" srcset="/-/media/everence/articles/financial-services/20251003_an-expression-of-faith_jim-miller-and-daughter-brielle_775x436.png?mh=243&amp;mw=434&amp;hash=B904BCB0CD46F8A00FC7BA1A3A7D3EF6&amp; 434w, /-/media/everence/articles/financial-services/20251003_an-expression-of-faith_jim-miller-and-daughter-brielle_775x436.png?mh=351&amp;mw=624&amp;hash=3C1F7E3211B3D8A3594EE4FEF1257448&amp; 624w, /-/media/everence/articles/financial-services/20251003_an-expression-of-faith_jim-miller-and-daughter-brielle_775x436.png?mh=378&amp;mw=672&amp;hash=C87F61C334959CBC11801E0D217B94FA&amp; 672w" sizes="(max-width: 1344px) 434px, 624px, 672px" alt="Jim Miller of Sarasota, Florida, and daughter Brielle Miller discuss charitable giving in front of a window." class="shared__image shared__image--auto" loading="lazy">
-		</figure>
-	<div class="shared__card__body shared__card__body--default shared__card--has-padding--default">
-		
-				<small class="shared__heading shared__heading--h6 shared__heading--bold shared__heading--uppercase p-category">Faith and Finance</small>				<h3 class="shared__heading shared__heading--h4 shared__heading--bold p-name">
-					An expression of faith
-				</h3>
-				<h6 class="shared__heading shared__heading--h6 shared__heading--bold p-author">
-					By
-Everence staff				</h6>
-				<p class="p-description">Generosity as a way of life for the Miller family and Dutchcrafters</p>
-					<a class="shared__button shared__button--default-transparent u-url shared__button--link" href="https://www.everence.com/everence-articles/financial-services/product/charitable-giving/20251003-an-expression-of-faith-the-millers-and-dutchcrafters" title="An expression of faith">Read article</a>
-	</div>
-		<footer class="shared__card__footer shared__card__footer--default shared__card--has-border__top">
-			<p class="shared__meta">
-				<strong>Published: </strong>
-				<time class="dt-published" datetime="10/3/2025 4:00:00 AM">October 03, 2025</time>
-			</p>
-		</footer>
-</article>
 </div>
 
 	</div>
